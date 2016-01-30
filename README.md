@@ -1,5 +1,6 @@
 # TorGTK
 ![TorGTK Screenshot](TorGTK.png)
+
 TorGTK is a frontend for Tor written in Python and GTK 3. 
 
 ## What has been done
