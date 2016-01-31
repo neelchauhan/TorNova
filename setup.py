@@ -14,7 +14,7 @@ setup(name="TorGTK",
 	package_data={"TorGTK": ["data/*"]},
 	install_requires=[
 		"stem",
-	]
+	],
 	classifiers=[
 		"Environment :: X11 Applications :: GTK",
 		"Intended Audience :: End Users/Desktop",
