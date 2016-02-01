@@ -38,6 +38,8 @@ def enableTor(switch, gparam):
 
 # Wrapper function to kill application
 def stopApp(*args):
+	if objs["swEnable"].get_active():
+		stopTor(tor_process)
 	objs["swEnable"].set_active(False)
 	stopTor(tor_process)
 	Gtk.main_quit(*args)
