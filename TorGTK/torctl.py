@@ -36,3 +36,8 @@ def enableTor(switch, gparam):
 		objs["spinSocks"].set_sensitive(True)
 		stopTor(tor_process)
 
+# Wrapper function to kill application
+def stopApp(*args):
+	objs["swEnable"].set_active(False)
+	stopTor(tor_process)
+	Gtk.main_quit(*args)

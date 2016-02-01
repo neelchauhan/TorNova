@@ -3,7 +3,7 @@
 from setuptools import setup
 
 setup(name="TorGTK",
-	version="0.1.0",
+	version="0.1.1",
 	description="GTK3 Frontend for Tor",
 	license = "BSD",
 	author="Neel Chauhan",
