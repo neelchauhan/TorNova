@@ -7,6 +7,11 @@ def init_gtk_objects(builder):
 		obj_name = Gtk.Buildable.get_name(obj)
 		objs[obj_name] = builder.get_object(obj_name)
 
+def init_switch(name, action):
+	objs[name] = Gtk.Switch()
+	objs[name].connect("notify::active", action)
+	return objs[name]
+
 def add_row(listbox, left, right):
 	row = Gtk.ListBoxRow()
 	hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=50)

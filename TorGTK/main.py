@@ -25,8 +25,7 @@ def main_loop(args=None):
 	add_row("lbSettings", label, objs["spinSocks"])
 
 	label = Gtk.Label("Enable Tor", xalign=0)
-	objs["swEnable"] = Gtk.Switch()
-	objs["swEnable"].connect("notify::active", enableTor)
+	init_switch("swEnable", enableTor)
 	add_row("lbMain", label, objs["swEnable"])
 
 	objs["mainWindow"].set_wmclass("TorGTK", "TorGTK")
