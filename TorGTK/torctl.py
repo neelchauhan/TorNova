@@ -1,18 +1,22 @@
+import os
 from var import *
 from ui_elements import message_box
 from gi.repository import Gtk
 import stem.process
 from stem.util import term
+# Debug lines
+import traceback
+import sys
 
 # Function to start Tor process
 def startTor():
+	tor_proc = None
 	# Attempt to start Tor
 	try:
 		tor_proc = stem.process.launch_tor_with_config(
 			config = {
 				"SocksPort": str(objs["spinSocks"].get_text()),
-				"ControlPort": str(default_control_port)
-	
+				"ControlPort": str(default_control_port),
 			}
 		)
 	# Return error message
@@ -24,7 +28,8 @@ def startTor():
 
 # Function to kill Tor
 def stopTor(tor_proc):
-	tor_proc.kill()
+	if "kill" in dir(tor_proc):
+		tor_proc.kill()
 
 # Wrapper function for enabling/disabling Tor
 def enableTor(switch, gparam):

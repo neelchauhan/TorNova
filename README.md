@@ -17,7 +17,7 @@ TorGTK is a frontend for Tor written in Python and GTK 3.
 ## Requirments
  * Python 2 (Python 3 does not work currently)
  * [Stem](https://stem.torproject.org/)
- * [GTK 3](http://www.gtk.org/) with Python bindings
+ * [GTK 3](http://www.gtk.org/) and [PyGObject](https://wiki.gnome.org/action/show/Projects/PyGObject?action=show&redirect=PyGObject)
 
 TorGTK has been tested on FreeBSD 10.2 and Ubuntu GNOME 15.10.
 

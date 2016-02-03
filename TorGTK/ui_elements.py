@@ -7,6 +7,17 @@ def init_gtk_objects(builder):
 		obj_name = Gtk.Buildable.get_name(obj)
 		objs[obj_name] = builder.get_object(obj_name)
 
+def add_row(listbox, left, right):
+	row = Gtk.ListBoxRow()
+	hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=50)
+	row.add(hbox)
+	#label = Gtk.Label("Enable Automatic Update", xalign=0)
+	#check = Gtk.CheckButton()
+	hbox.pack_start(left, True, True, 0)
+	hbox.pack_start(right, False, True, 0)
+
+	objs[listbox].add(row)
+
 # Code for message box
 def message_box(mtype, title, message):
 	dialog = Gtk.MessageDialog(objs["mainWindow"], 0, mtype, Gtk.ButtonsType.OK, title)

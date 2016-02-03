@@ -8,7 +8,7 @@ from ui_handlers import *
 
 # Add Glade files
 builder = Gtk.Builder()
-builder.add_from_file(detect_filename("data/TorGTK.glade"))
+builder.add_from_file(detect_filename("data/TorGTK-tabbed.glade"))
 
 # Add GTK objects into dictionary (dictionary used to reference GTK objects)
 init_gtk_objects(builder)
@@ -16,13 +16,22 @@ init_gtk_objects(builder)
 # Main loop
 def main_loop(args=None):
 	builder.connect_signals(handlers)
-	objs["mainWindow"].set_wmclass("TorGTK", "TorGTK")
-	objs["mainWindow"].show_all()
-	objs["mainWindow"].set_title("TorGTK")
 
+	label = Gtk.Label("SOCKS Port", xalign=0)
+	objs["spinSocks"] = Gtk.SpinButton()
 	objs["spinSocks"].set_numeric(True)
 	adjustment = Gtk.Adjustment(default_socks_port, 1024, 65535, 1, 1, 1)
 	objs["spinSocks"].set_adjustment(adjustment)
+	add_row("lbSettings", label, objs["spinSocks"])
+
+	label = Gtk.Label("Enable Tor", xalign=0)
+	objs["swEnable"] = Gtk.Switch()
+	objs["swEnable"].connect("notify::active", enableTor)
+	add_row("lbMain", label, objs["swEnable"])
+
+	objs["mainWindow"].set_wmclass("TorGTK", "TorGTK")
+	objs["mainWindow"].show_all()
+	objs["mainWindow"].set_title("TorGTK")
 
 	Gtk.main()
 

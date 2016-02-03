@@ -5,5 +5,5 @@ from ui_elements import msgAbout
 handlers = {
 	"windowDelete": stopApp,
 	"enableTor": enableTor,
-	"msgAbout": msgAbout
+	"msgAbout": msgAbout,
 }
