@@ -12,6 +12,13 @@ def init_switch(name, action):
 	objs[name].connect("notify::active", action)
 	return objs[name]
 
+def init_spinbutton(name, default_value, min_value, max_value, increment):
+	objs[name] = Gtk.SpinButton()
+	objs[name].set_numeric(True)
+	adjustment = Gtk.Adjustment(default_value, min_value, max_value, increment, increment, 1)
+	objs[name].set_adjustment(adjustment)
+	return objs[name]
+
 def add_row(listbox, left, right):
 	row = Gtk.ListBoxRow()
 	hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=50)
