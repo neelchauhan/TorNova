@@ -19,16 +19,21 @@ def init_spinbutton(name, default_value, min_value, max_value, increment):
 	objs[name].set_adjustment(adjustment)
 	return objs[name]
 
+# Code to add row
 def add_row(listbox, left, right):
 	row = Gtk.ListBoxRow()
 	hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=50)
 	row.add(hbox)
-	#label = Gtk.Label("Enable Automatic Update", xalign=0)
-	#check = Gtk.CheckButton()
 	hbox.pack_start(left, True, True, 0)
 	hbox.pack_start(right, False, True, 0)
 
 	objs[listbox].add(row)
+
+# Code to turn listbox definition list into GTK ListBox rows
+def listbox_addrow(listbox, row_list):
+	for row in row_list:
+		label = Gtk.Label(row[0], xalign=0)
+		add_row(listbox, label, row[1])
 
 # Code for message box
 def message_box(mtype, title, message):
