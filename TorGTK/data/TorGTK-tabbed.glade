@@ -4,15 +4,29 @@
   <requires lib="gtk+" version="3.12"/>
   <object class="GtkWindow" id="mainWindow">
     <property name="can_focus">False</property>
+    <property name="default_height">300</property>
     <signal name="delete-event" handler="windowDelete" swapped="no"/>
     <child>
       <object class="GtkNotebook" id="nbMain">
         <property name="visible">True</property>
         <property name="can_focus">True</property>
         <child>
-          <object class="GtkListBox" id="lbMain">
+          <object class="GtkScrolledWindow" id="swMain">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
+            <property name="can_focus">True</property>
+            <property name="shadow_type">in</property>
+            <child>
+              <object class="GtkViewport" id="vpMain">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <child>
+                  <object class="GtkListBox" id="lbMain">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                  </object>
+                </child>
+              </object>
+            </child>
           </object>
         </child>
         <child type="tab">
@@ -26,9 +40,22 @@
           </packing>
         </child>
         <child>
-          <object class="GtkListBox" id="lbSettings">
+          <object class="GtkScrolledWindow" id="swSettings">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
+            <property name="can_focus">True</property>
+            <property name="shadow_type">in</property>
+            <child>
+              <object class="GtkViewport" id="vpSettings">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <child>
+                  <object class="GtkListBox" id="lbSettings">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                  </object>
+                </child>
+              </object>
+            </child>
           </object>
           <packing>
             <property name="position">1</property>
