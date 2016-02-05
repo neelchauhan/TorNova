@@ -16,7 +16,7 @@ def startTor():
 		tor_proc = stem.process.launch_tor_with_config(
 			config = {
 				"SocksPort": str(objs["spinSocks"].get_text()),
-				"ControlPort": str(default_control_port),
+				"ControlPort": str(objs["spinCtl"].get_text()),
 			}
 		)
 	# Return error message
