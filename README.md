@@ -13,6 +13,7 @@ TorGTK is a frontend for Tor written in Python and GTK 3.
  * Logo
  * Advanced Tor settings (eg. exit from specific country, specific node, etc.)
  * More polish on documentation, README.md, etc.
+ * Log file viewing
 
 ## Requirments
  * Python 2 (Python 3 does not work currently)

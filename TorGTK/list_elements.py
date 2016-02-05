@@ -5,6 +5,7 @@ from torctl import *
 
 lb_main_elements = [
 	["Enable Tor", init_switch("swEnable", enableTor)],
+	["", init_button("btnAbout", "About", about_box)],
 ]
 
 lb_settings_elements = [

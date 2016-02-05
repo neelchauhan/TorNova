@@ -12,6 +12,11 @@ def init_switch(name, action):
 	objs[name].connect("notify::active", action)
 	return objs[name]
 
+def init_button(name, label, action):
+	objs[name] = Gtk.Button.new_with_label(label)
+	objs[name].connect("clicked", action)
+	return objs[name]
+
 def init_spinbutton(name, default_value, min_value, max_value, increment):
 	objs[name] = Gtk.SpinButton()
 	objs[name].set_numeric(True)
@@ -43,5 +48,5 @@ def message_box(mtype, title, message):
 	dialog.destroy()
 
 # Code for about box
-def msgAbout(gparam):
+def about_box(gparam):
 	message_box(InfoBox, "About TorGTK 0.1.1", "Copyright 2016 Neel Chauhan. TorGTK is licensed under the Simplified BSD license.")
