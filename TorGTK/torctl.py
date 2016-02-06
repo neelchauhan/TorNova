@@ -13,6 +13,7 @@ def startTor():
 	tor_proc = None
 	# Attempt to start Tor
 	try:
+		print("Logfile is at: " + tor_logfile_location)
 		tor_proc = stem.process.launch_tor_with_config(
 			config = {
 				"SocksPort": str(objs["spinSocks"].get_text()),
