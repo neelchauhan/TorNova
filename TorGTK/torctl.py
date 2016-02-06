@@ -34,11 +34,11 @@ def stopTor(tor_proc):
 # Wrapper function for enabling/disabling Tor
 def enableTor(switch, gparam):
 	if switch.get_active():
-		objs["spinSocks"].set_sensitive(False)
+		objs["lbSettings"].set_sensitive(False)
 		global tor_process
 		tor_process = startTor()
 	else:
-		objs["spinSocks"].set_sensitive(True)
+		objs["lbSettings"].set_sensitive(True)
 		stopTor(tor_process)
 
 # Wrapper function to kill application
