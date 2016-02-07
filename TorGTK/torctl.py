@@ -48,7 +48,8 @@ def stopApp(*args):
 	if objs["swEnable"].get_active():
 		stopTor(tor_process)
 	objs["swEnable"].set_active(False)
-	os.remove(tor_logfile_location)
+	if os.path.exists(tor_logfile_location):
+		os.remove(tor_logfile_location)
 	os.removedirs(tor_logfile_dir)
 	Gtk.main_quit(*args)
 
