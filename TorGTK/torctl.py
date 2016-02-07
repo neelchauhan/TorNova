@@ -1,6 +1,6 @@
 import os
 from var import *
-from ui_elements import message_box
+from ui_elements import message_box, refresh_log
 from gi.repository import Gtk
 import stem.process
 from stem.util import term
@@ -52,4 +52,3 @@ def stopApp(*args):
 		os.remove(tor_logfile_location)
 	os.removedirs(tor_logfile_dir)
 	Gtk.main_quit(*args)
-

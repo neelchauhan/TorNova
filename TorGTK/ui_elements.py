@@ -7,6 +7,22 @@ def init_gtk_objects(builder):
 		obj_name = Gtk.Buildable.get_name(obj)
 		objs[obj_name] = builder.get_object(obj_name)
 
+def show_log_win(gparam):
+	refresh_log(1)
+	objs["swLog"].set_hexpand(True)
+	objs["swLog"].set_vexpand(True)
+	objs["logWindow"].set_wmclass("TorGTK Log", "TorGTK Log")
+	objs["logWindow"].show_all()
+	objs["logWindow"].set_title("TorGTK Log")
+	objs["logWindow"].connect("delete-event", lambda w, e: w.hide() or True)
+
+def refresh_log(gparam):
+	text_buf = objs["tvLog"].get_buffer()
+	if os.path.exists(tor_logfile_location):
+		logfile_in = open(tor_logfile_location, "r")
+		text_buf.set_text(logfile_in.read())
+		logfile_in.close()
+
 def init_switch(name, action):
 	objs[name] = Gtk.Switch()
 	objs[name].connect("notify::active", action)
@@ -49,4 +65,4 @@ def message_box(mtype, title, message):
 
 # Code for about box
 def about_box(gparam):
-	message_box(InfoBox, "About TorGTK 0.1.1", "Copyright 2016 Neel Chauhan. TorGTK is licensed under the Simplified BSD license.")
+	message_box(InfoBox, "About TorGTK 0.2.0", "Copyright 2016 Neel Chauhan. TorGTK is licensed under the Simplified BSD license.")
