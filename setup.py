@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from setuptools import setup
+import sys
 
 setup(name="TorGTK",
 	version="0.2.0",
@@ -14,6 +15,10 @@ setup(name="TorGTK",
 	package_data={"TorGTK": ["data/*"]},
 	install_requires=[
 		"stem",
+	],
+	data_files=[
+		(sys.prefix + "/share/pixmaps", ["icons/scalable/torgtk.svg"]),
+		(sys.prefix + "/share/applications", ["data/torgtk.desktop"]),
 	],
 	classifiers=[
 		"Environment :: X11 Applications :: GTK",
