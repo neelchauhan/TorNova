@@ -11,7 +11,6 @@ def show_log_win(gparam):
 	refresh_log(1)
 	objs["swLog"].set_hexpand(True)
 	objs["swLog"].set_vexpand(True)
-	objs["logWindow"].set_wmclass("TorGTK Log", "TorGTK Log")
 	objs["logWindow"].show_all()
 	objs["logWindow"].set_title("TorGTK Log")
 	objs["logWindow"].connect("delete-event", lambda w, e: w.hide() or True)
