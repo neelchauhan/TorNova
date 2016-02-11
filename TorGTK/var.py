@@ -13,6 +13,10 @@ tor_process = None
 tor_logfile_dir = tempfile.mkdtemp()
 tor_logfile_location = os.path.join(tor_logfile_dir, "tor_log")
 
+# User preferences location placeholder
+home_dir = os.path.expanduser("~")
+prefs_dir = os.path.join(home_dir, ".local", "share", "torgtk")
+
 # Define object dictionary
 objs = { }
 
