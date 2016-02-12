@@ -2,7 +2,7 @@
 from gi.repository import Gtk
 from var import *
 from torctl import *
-from fn_handle import detect_filename
+from fn_handle import *
 from list_elements import *
 from ui_elements import *
 from ui_handlers import *
@@ -16,6 +16,7 @@ init_gtk_objects(builder)
 
 # Main loop
 def main_loop(args=None):
+	make_dir_if_not_exist(prefs_dir)
 	builder.connect_signals(handlers)
 
 	listbox_addrow("lbMain", lb_main_elements)
