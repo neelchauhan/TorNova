@@ -64,4 +64,4 @@ def message_box(mtype, title, message):
 
 # Code for about box
 def about_box(gparam):
-	message_box(InfoBox, "About TorGTK 0.2.0", "Copyright 2016 Neel Chauhan. TorGTK is licensed under the Simplified BSD license.")
+	message_box(InfoBox, "About TorGTK 0.2.1", "Copyright 2016 Neel Chauhan. TorGTK is licensed under the Simplified BSD license.")
