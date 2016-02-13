@@ -16,6 +16,7 @@ tor_logfile_location = os.path.join(tor_logfile_dir, "tor_log")
 # User preferences location placeholder
 home_dir = os.path.expanduser("~")
 prefs_dir = os.path.join(home_dir, ".local", "share", "torgtk")
+prefs_file = os.path.join(prefs_dir, "config")
 
 # Define object dictionary
 objs = { }

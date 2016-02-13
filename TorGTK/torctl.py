@@ -1,6 +1,7 @@
 import os
 from var import *
 from ui_elements import message_box, refresh_log
+from pref_handle import *
 from gi.repository import Gtk
 import stem.process
 from stem.util import term
@@ -51,4 +52,5 @@ def stopApp(*args):
 	if os.path.exists(tor_logfile_location):
 		os.remove(tor_logfile_location)
 	os.removedirs(tor_logfile_dir)
+	write_config(prefs_file)
 	Gtk.main_quit(*args)
