@@ -14,7 +14,6 @@ def read_config_if_exists(filename):
 		options = Config.options(section)
 		for option in options:
 			value = Config.get(section, option)
-			print objs[pref_mappings[option]]
 			objs[pref_mappings[option]].set_value(int(value))
 
 def write_config(filename):
