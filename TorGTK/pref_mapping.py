@@ -1,4 +1,4 @@
 pref_mappings = {
-	"SocksPort": "spinSocks",
-	"ControlPort": "spinCtl",
+	"socksport": "spinSocks",
+	"controlport": "spinCtl",
 }

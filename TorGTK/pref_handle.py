@@ -3,6 +3,19 @@ from gi.repository import Gtk
 from pref_mapping import *
 from var import *
 
+def read_config_if_exists(filename):
+	if os.path.isfile(filename):
+		# Init config parser and read config
+		Config = ConfigParser.SafeConfigParser()
+		Config.read(filename)
+		section = "TorGTKprefs"
+
+		# Loop through options
+		options = Config.options(section)
+		for option in options:
+			value = Config.get(section, option)
+			objs[pref_mappings[option]].set_text(value)
+
 def write_config(filename):
 	# Open file
 	config_fd = open(filename, "w")

@@ -17,6 +17,8 @@ init_gtk_objects(builder)
 # Main loop
 def main_loop(args=None):
 	make_dir_if_not_exist(prefs_dir)
+	read_config_if_exists(prefs_file)
+
 	builder.connect_signals(handlers)
 
 	listbox_addrow("lbMain", lb_main_elements)
