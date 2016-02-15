@@ -18,9 +18,19 @@ def show_log_win(gparam):
 def refresh_log(gparam):
 	text_buf = objs["tvLog"].get_buffer()
 	if os.path.exists(tor_logfile_location):
+		# Get contents of existing logfile
 		logfile_in = open(tor_logfile_location, "r")
-		text_buf.set_text(logfile_in.read())
+		lf_content = logfile_in.read()
 		logfile_in.close()
+
+		# Get iterators, see difference, and make changes
+		start_iter = text_buf.get_start_iter()
+		end_iter = text_buf.get_end_iter()
+
+		current_content = text_buf.get_text(start_iter, end_iter, False)
+		content = lf_content[len(current_content):]
+		
+		text_buf.insert(end_iter, content)
 
 def init_switch(name, action):
 	objs[name] = Gtk.Switch()
