@@ -49,6 +49,10 @@ def init_spinbutton(name, default_value, min_value, max_value, increment):
 	objs[name].set_adjustment(adjustment)
 	return objs[name]
 
+def init_label(name, content):
+	objs[name] = Gtk.Label(content)
+	return objs[name]
+
 # Code to add row
 def add_row(listbox, left, right):
 	row = Gtk.ListBoxRow()
