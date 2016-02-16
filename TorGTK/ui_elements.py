@@ -8,7 +8,7 @@ def init_gtk_objects(builder):
 		objs[obj_name] = builder.get_object(obj_name)
 
 def show_log_win(gparam):
-	refresh_log(1)
+	#refresh_log(1)
 	objs["swLog"].set_hexpand(True)
 	objs["swLog"].set_vexpand(True)
 	objs["logWindow"].show_all()

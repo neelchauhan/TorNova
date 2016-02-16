@@ -2,9 +2,11 @@ import os
 from var import *
 from ui_elements import message_box, refresh_log
 from pref_handle import *
+from log_update import update_log_interval
 from gi.repository import Gtk
 import stem.process
 from stem.util import term
+import threading
 # Debug lines
 import traceback
 import sys
@@ -22,6 +24,8 @@ def startTor():
 				"Log": "Notice file " + tor_logfile_location,
 			}
 		)
+		log_thread = threading.Thread(target=update_log_interval)
+		log_thread.start()
 	# Return error message
 	except OSError as err_m:
 		message_box(ErrorBox, "ERROR", str(err_m))
