@@ -49,6 +49,15 @@ def init_spinbutton(name, default_value, min_value, max_value, increment):
 	objs[name].set_adjustment(adjustment)
 	return objs[name]
 
+def init_menubutton(name, menu):
+	objs[name] = Gtk.MenuButton()
+	objs[name].set_popup(menu)
+	return objs[name]
+
+def init_menu(name):
+	objs[name] = Gtk.Menu()
+	return objs[name]
+
 def init_label(name, content):
 	objs[name] = Gtk.Label(content)
 	return objs[name]
