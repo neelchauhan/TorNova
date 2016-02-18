@@ -20,6 +20,7 @@ prefs_file = os.path.join(prefs_dir, "config")
 
 # Define object dictionary
 objs = { }
+objs["menuMain"] = Gtk.Menu()
 
 # Define error message types
 InfoBox = Gtk.MessageType.INFO

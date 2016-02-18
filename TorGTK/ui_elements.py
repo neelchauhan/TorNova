@@ -78,6 +78,14 @@ def listbox_addrow(listbox, row_list):
 		label = Gtk.Label(row[0], xalign=0)
 		add_row(listbox, label, row[1])
 
+# Code to compile menu
+def menu_compile(menu_name, menu_list):
+	objs["ag"] = Gtk.ActionGroup("my_actions")
+	for item in menu_list:
+		menu_item = Gtk.MenuItem(item[0])
+		objs[menu_name].append(menu_item)
+		menu_item.show()
+
 # Code for message box
 def message_box(mtype, title, message):
 	dialog = Gtk.MessageDialog(objs["mainWindow"], 0, mtype, Gtk.ButtonsType.OK, title)
