@@ -7,7 +7,7 @@ def init_gtk_objects(builder):
 		obj_name = Gtk.Buildable.get_name(obj)
 		objs[obj_name] = builder.get_object(obj_name)
 
-def show_log_win(gparam):
+def show_log_win(*args):
 	#refresh_log(1)
 	objs["swLog"].set_hexpand(True)
 	objs["swLog"].set_vexpand(True)
@@ -78,6 +78,15 @@ def listbox_addrow(listbox, row_list):
 		label = Gtk.Label(row[0], xalign=0)
 		add_row(listbox, label, row[1])
 
+# Code to compile menu
+def menu_compile(menu_name, menu_list):
+	objs["ag"] = Gtk.ActionGroup("my_actions")
+	for item in menu_list:
+		menu_item = Gtk.MenuItem(item[0])
+		menu_item.connect("button-press-event", item[1])
+		objs[menu_name].append(menu_item)
+		menu_item.show()
+
 # Code for message box
 def message_box(mtype, title, message):
 	dialog = Gtk.MessageDialog(objs["mainWindow"], 0, mtype, Gtk.ButtonsType.OK, title)
@@ -86,5 +95,5 @@ def message_box(mtype, title, message):
 	dialog.destroy()
 
 # Code for about box
-def about_box(gparam):
+def about_box(*args):
 	message_box(InfoBox, "About TorGTK 0.2.1", "Copyright 2016 Neel Chauhan. TorGTK is licensed under the Simplified BSD license.")
