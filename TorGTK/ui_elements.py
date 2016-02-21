@@ -62,6 +62,10 @@ def init_label(name, content):
 	objs[name] = Gtk.Label(content)
 	return objs[name]
 
+def init_textfield(name):
+	objs[name] = Gtk.Entry()
+	return objs[name]
+
 # Code to add row
 def add_row(listbox, left, right):
 	row = Gtk.ListBoxRow()
