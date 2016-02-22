@@ -2,6 +2,7 @@ import os
 from var import *
 from ui_elements import message_box, refresh_log
 from pref_handle import *
+from parsing import parse_node_select
 from log_update import update_log_interval
 from gi.repository import Gtk
 import stem.process
