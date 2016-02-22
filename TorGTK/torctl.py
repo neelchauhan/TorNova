@@ -28,6 +28,9 @@ def startTor():
 			exit_str = objs["txtExit"].get_text()
 			config["ExitNodes"] = parse_node_select(exit_str, False)
 			config["ExcludeExitNodes"] = parse_node_select(exit_str, True)
+		if objs["txtEntry"].get_text() != "":
+			entry_str = objs["txtEntry"].get_text()
+			config["EntryNodes"] = parse_node_select(entry_str, False)
 
 		tor_proc = stem.process.launch_tor_with_config(config)
 		log_thread = threading.Thread(target=update_log_interval)

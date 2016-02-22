@@ -19,4 +19,5 @@ lb_settings_elements = [
 	["SOCKS Port", init_spinbutton("spinSocks", default_socks_port, 1024, 65535, 1)],
 	["Control Port", init_spinbutton("spinCtl", default_control_port, 1024, 65535, 1)],
 	["Exit Nodes", init_textfield("txtExit")],
+	["Entry Nodes", init_textfield("txtEntry")],
 ]
