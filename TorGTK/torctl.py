@@ -24,6 +24,12 @@ def startTor():
 			"Log": "Notice file " + tor_logfile_location,
 		}
 
+		if objs["txtExit"].get_text() != "":
+			print 3
+			exit_str = objs["txtExit"].get_text()
+			config["ExitNodes"] = parse_node_select(exit_str, False)
+			config["ExcludeExitNodes"] = parse_node_select(exit_str, True)
+
 		tor_proc = stem.process.launch_tor_with_config(config)
 		log_thread = threading.Thread(target=update_log_interval)
 		log_thread.start()
