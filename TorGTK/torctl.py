@@ -25,7 +25,6 @@ def startTor():
 		}
 
 		if objs["txtExit"].get_text() != "":
-			print 3
 			exit_str = objs["txtExit"].get_text()
 			config["ExitNodes"] = parse_node_select(exit_str, False)
 			config["ExcludeExitNodes"] = parse_node_select(exit_str, True)
