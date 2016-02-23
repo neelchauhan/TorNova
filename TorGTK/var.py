@@ -2,6 +2,8 @@ from gi.repository import Gtk
 import tempfile
 import os.path
 
+version = "0.2.1"
+
 # Define default port numbers
 default_socks_port = 19050
 default_control_port = 19051
