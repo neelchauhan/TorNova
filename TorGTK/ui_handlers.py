@@ -4,5 +4,4 @@ from torctl import enableTor, stopApp, refresh_log
 handlers = {
 	"windowDelete": stopApp,
 	"enableTor": enableTor,
-	"refreshLog": refresh_log,
 }
