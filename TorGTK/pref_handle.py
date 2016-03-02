@@ -14,11 +14,11 @@ def read_config_if_exists(filename):
 		options = Config.options(section)
 		for option in options:
 			value = Config.get(section, option)
-			#objs[pref_mappings[option]].set_value(int(value))
-			if value.isdigit():
-				objs[pref_mappings[option]].set_value(int(value))
-			else:
-				objs[pref_mappings[option]].set_text(value)
+			if option in pref_mappings:
+				if value.isdigit():
+					objs[pref_mappings[option]].set_value(int(value))
+				else:
+					objs[pref_mappings[option]].set_text(value)
 
 def write_config(filename):
 	# Open file
