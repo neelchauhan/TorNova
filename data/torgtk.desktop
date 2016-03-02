@@ -6,4 +6,4 @@ Comment=Tor Client in GTK
 Exec=TorGTK
 Icon=torgtk
 Terminal=false
-
+Categories=Network;
