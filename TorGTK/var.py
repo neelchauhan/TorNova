@@ -1,6 +1,7 @@
 from gi.repository import Gtk
 import tempfile
 import os.path
+import platform
 
 version = "0.2.2"
 
@@ -16,9 +17,13 @@ tor_logfile_dir = tempfile.mkdtemp()
 tor_logfile_location = os.path.join(tor_logfile_dir, "tor_log")
 
 # User preferences location placeholder
-home_dir = os.path.expanduser("~")
-prefs_dir = os.path.join(home_dir, ".local", "share", "torgtk")
-prefs_file = os.path.join(prefs_dir, "config")
+if platform.system() == "Windows":
+	prefs_dir = os.path.join(os.getenv("APPDATA"), "torgtk")
+	prefs_file = os.path.join(prefs_dir, "config")
+else:
+	home_dir = os.path.expanduser("~")
+	prefs_dir = os.path.join(home_dir, ".local", "share", "torgtk")
+	prefs_file = os.path.join(prefs_dir, "config")
 
 # Define object dictionary
 objs = { }
