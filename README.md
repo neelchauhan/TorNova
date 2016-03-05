@@ -39,12 +39,6 @@ and (even run it) with these following commands:
 You can also use setup.py to install it into your OS prefix (eg. /usr or
 /usr/local).
 
-# Usage
-
-The usage information is available on my website at
-[http://www.neelc.org/pages/torgtk.html](http://www.neelc.org/pages/torgtk.html)
-in the Usage section.
-
 ## License
 TorGTK is licensed under the Simplified BSD license.
 
