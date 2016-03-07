@@ -1,6 +1,7 @@
-![NovaTor Logo](artwork/logo.svg)
+![NovaTor Logo](artwork/logo.png)
 # NovaTor
 Formerly TorGTK
+
 ![Screenshot](artwork/screenshot.png)
 
 NovaTor is a frontend for Tor written in Python and GTK 3. 
