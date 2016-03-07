@@ -11,14 +11,14 @@ setup(name="TorGTK",
 	author_email="neel@neelc.org",
 	url="https://www.github.com/neelchauhan/TorGTK/",
 	packages=["TorGTK"],
-	entry_points={'gui_scripts': ['TorGTK=TorGTK.main:main_loop']},
-	package_data={"TorGTK": ["data/*"]},
+	entry_points={'gui_scripts': ['NovaTor=NovaTor.main:main_loop']},
+	package_data={"NovaTor": ["data/*"]},
 	install_requires=[
 		"stem",
 	],
 	data_files=[
-		(sys.prefix + "/share/pixmaps", ["icons/scalable/torgtk.svg"]),
-		(sys.prefix + "/share/applications", ["data/torgtk.desktop"]),
+		(sys.prefix + "/share/pixmaps", ["icons/scalable/novator.svg"]),
+		(sys.prefix + "/share/applications", ["data/novator.desktop"]),
 	],
 	classifiers=[
 		"Environment :: X11 Applications :: GTK",

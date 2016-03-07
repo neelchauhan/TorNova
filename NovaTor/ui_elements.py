@@ -12,7 +12,7 @@ def show_log_win(*args):
 	objs["swLog"].set_hexpand(True)
 	objs["swLog"].set_vexpand(True)
 	objs["logWindow"].show_all()
-	objs["logWindow"].set_title("TorGTK Log")
+	objs["logWindow"].set_title("NovaTor Log")
 	objs["logWindow"].connect("delete-event", lambda w, e: w.hide() or True)
 
 def refresh_log(gparam):
@@ -100,4 +100,4 @@ def message_box(mtype, title, message):
 
 # Code for about box
 def about_box(*args):
-	message_box(InfoBox, "About TorGTK " + version, "Copyright 2016 Neel Chauhan.\nTorGTK is licensed under the Simplified BSD license.")
+	message_box(InfoBox, "About NovaTor " + version, "Copyright 2016 Neel Chauhan.\nTorGTK is licensed under the Simplified BSD license.")

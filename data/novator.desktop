@@ -1,9 +1,9 @@
 [Desktop Entry]
 Type=Application
 Encoding=UTF-8
-Name=TorGTK
+Name=NovaTor
 Comment=Tor Client in GTK
-Exec=TorGTK
-Icon=torgtk
+Exec=NovaTor
+Icon=novator
 Terminal=false
 Categories=Network;
