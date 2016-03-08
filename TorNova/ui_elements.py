@@ -8,12 +8,18 @@ def init_gtk_objects(builder):
 		objs[obj_name] = builder.get_object(obj_name)
 
 def show_log_win(*args):
-	#refresh_log(1)
 	objs["swLog"].set_hexpand(True)
 	objs["swLog"].set_vexpand(True)
 	objs["logWindow"].show_all()
 	objs["logWindow"].set_title("TorNova Log")
 	objs["logWindow"].connect("delete-event", lambda w, e: w.hide() or True)
+
+def show_settings_win(*args):
+	objs["swSettings"].set_vexpand(True)
+	objs["winSettings"].show_all()
+	objs["winSettings"].set_title("TorNova Settings")
+	objs["winSettings"].connect("delete-event", lambda w, e: w.hide() or True)
+
 
 def refresh_log(gparam):
 	text_buf = objs["tvLog"].get_buffer()
