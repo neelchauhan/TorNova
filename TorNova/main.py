@@ -28,9 +28,9 @@ def main_loop(args=None):
 	listbox_addrow("lbMain", lb_main_elements)
 	listbox_addrow("lbSettings", lb_settings_elements)
 
-	objs["mainWindow"].set_wmclass("NovaTor", "NovaTor")
+	objs["mainWindow"].set_wmclass("TorNova", "TorNova")
 	objs["mainWindow"].show_all()
-	objs["mainWindow"].set_title("NovaTor")
+	objs["mainWindow"].set_title("TorNova")
 
 	menu_compile("menuMain", menu_main_elements)
 
