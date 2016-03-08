@@ -14,6 +14,7 @@ from ui_handlers import *
 builder = Gtk.Builder()
 builder.add_from_file(detect_filename("data/main_window.glade"))
 builder.add_from_file(detect_filename("data/log_window.glade"))
+builder.add_from_file(detect_filename("data/settings_window.glade"))
 
 # Add GTK objects into dictionary (dictionary used to reference GTK objects)
 init_gtk_objects(builder)

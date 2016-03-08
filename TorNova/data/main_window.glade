@@ -10,6 +10,7 @@
       <object class="GtkNotebook" id="nbMain">
         <property name="visible">True</property>
         <property name="can_focus">True</property>
+        <property name="show_tabs">False</property>
         <child>
           <object class="GtkScrolledWindow" id="swMain">
             <property name="visible">True</property>
@@ -43,29 +44,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkScrolledWindow" id="swSettings">
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="hscrollbar_policy">never</property>
-            <property name="shadow_type">in</property>
-            <child>
-              <object class="GtkViewport" id="vpSettings">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <child>
-                  <object class="GtkListBox" id="lbSettings">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="selection_mode">none</property>
-                    <property name="activate_on_single_click">False</property>
-                  </object>
-                </child>
-              </object>
-            </child>
-          </object>
-          <packing>
-            <property name="position">1</property>
-          </packing>
+          <placeholder/>
         </child>
         <child type="tab">
           <object class="GtkLabel" id="lblSettings">
