@@ -4,7 +4,7 @@
   <requires lib="gtk+" version="3.12"/>
   <object class="GtkWindow" id="mainWindow">
     <property name="can_focus">False</property>
-    <property name="default_height">350</property>
+    <property name="default_height">300</property>
     <signal name="delete-event" handler="windowDelete" swapped="no"/>
     <child>
       <object class="GtkNotebook" id="nbMain">
