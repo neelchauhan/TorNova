@@ -10,17 +10,17 @@ from menu_elements import *
 from ui_elements import *
 from ui_handlers import *
 
-# Add Glade files
-builder = Gtk.Builder()
-builder.add_from_file(detect_filename("data/main_window.glade"))
-builder.add_from_file(detect_filename("data/log_window.glade"))
-builder.add_from_file(detect_filename("data/settings_window.glade"))
-
-# Add GTK objects into dictionary (dictionary used to reference GTK objects)
-init_gtk_objects(builder)
-
 # Main loop
 def main_loop(args=None):
+	# Add Glade files
+	builder = Gtk.Builder()
+	builder.add_from_file(detect_filename("data/main_window.glade"))
+	builder.add_from_file(detect_filename("data/log_window.glade"))
+	builder.add_from_file(detect_filename("data/settings_window.glade"))
+
+	# Add GTK objects into dictionary (dictionary used to reference GTK objects)
+	init_gtk_objects(builder)
+
 	make_dir_if_not_exist(prefs_dir)
 	read_config_if_exists(prefs_file)
 
