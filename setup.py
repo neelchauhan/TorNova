@@ -18,7 +18,7 @@ setup(name="TorNova",
 	],
 	data_files=[
 		(sys.prefix + "/share/pixmaps", ["icons/scalable/tornova.svg"]),
-		(sys.prefix + "/share/applications", ["data/novator.desktop"]),
+		(sys.prefix + "/share/applications", ["data/tornova.desktop"]),
 	],
 	classifiers=[
 		"Environment :: X11 Applications :: GTK",
