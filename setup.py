@@ -4,7 +4,7 @@ from setuptools import setup
 import sys
 
 setup(name="TorNova",
-	version="0.2.2",
+	version="0.2.3",
 	description="GTK3 Frontend for Tor",
 	license = "BSD",
 	author="Neel Chauhan",

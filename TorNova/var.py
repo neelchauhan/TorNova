@@ -3,7 +3,7 @@ import tempfile
 import os.path
 import platform
 
-version = "0.2.2"
+version = "0.2.3"
 
 # Define default port numbers
 default_socks_port = 19050
