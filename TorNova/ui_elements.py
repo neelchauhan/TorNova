@@ -14,12 +14,17 @@ def show_log_win(*args):
 	objs["logWindow"].set_title("TorNova Log")
 	objs["logWindow"].connect("delete-event", lambda w, e: w.hide() or True)
 
+def show_circuit_win(*args):
+	objs["swSettings"].set_vexpand(True)
+	objs["winCircuit"].show_all()
+	objs["winCircuit"].set_title("Tor Circuits")
+	objs["winCircuit"].connect("delete-event", lambda w, e: w.hide() or True)
+
 def show_settings_win(*args):
 	objs["swSettings"].set_vexpand(True)
 	objs["winSettings"].show_all()
 	objs["winSettings"].set_title("TorNova Settings")
 	objs["winSettings"].connect("delete-event", lambda w, e: w.hide() or True)
-
 
 def refresh_log(gparam):
 	text_buf = objs["tvLog"].get_buffer()
