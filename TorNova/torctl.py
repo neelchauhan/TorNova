@@ -4,6 +4,7 @@ from ui_elements import message_box, refresh_log
 from pref_handle import *
 from parsing import parse_node_select
 from log_update import update_log_interval
+from circuit_view import set_circuits
 from gi.repository import Gtk
 import stem.process
 from stem.util import term
@@ -35,6 +36,7 @@ def startTor():
 		tor_proc = stem.process.launch_tor_with_config(config)
 		log_thread = threading.Thread(target=update_log_interval)
 		log_thread.start()
+		set_circuits()
 	# Return error message
 	except OSError as err_m:
 		message_box(ErrorBox, "ERROR", str(err_m))

@@ -77,6 +77,13 @@ def init_textfield(name):
 	objs[name] = Gtk.Entry()
 	return objs[name]
 
+def init_expander(name, label_text):
+	objs[name] = Gtk.Expander(label=label_text)
+	return objs[name]
+
+def add_to_expander(name, obj_name):
+	objs[name].add(objs[obj_name])
+
 # Code to add row
 def add_row(listbox, left, right):
 	row = Gtk.ListBoxRow()
@@ -84,6 +91,13 @@ def add_row(listbox, left, right):
 	row.add(hbox)
 	hbox.pack_start(left, True, True, 0)
 	hbox.pack_start(right, False, True, 0)
+
+	objs[listbox].add(row)
+
+# Code to add single object row
+def add_srow(listbox, obj):
+	row = Gtk.ListBoxRow()
+	row.add(obj)
 
 	objs[listbox].add(row)
 
