@@ -16,6 +16,9 @@ def set_circuits():
 
 				exp_name = "expCirc" + str(circ.id)
 				lbl_name = "lblCirc" + str(circ.id)
+				row_name = "rowCirc" + str(circ.id)
+				if circ.id not in idb["circ_ids"]:
+					idb["circ_ids"].append(circ.id)
 				if exp_name not in objs:
 					exp_lbl = "Circuit " + str(circ.id)
 					init_expander(exp_name, exp_lbl)
@@ -39,5 +42,13 @@ def set_circuits():
 					circ_str = circ_str[:len(circ_str)-1]
 					init_label(lbl_name, circ_str)
 					add_to_expander(exp_name, lbl_name)
-					add_srow("lbCircuit", objs[exp_name])
-		time.sleep(1)
+					add_srow(row_name, "lbCircuit", objs[exp_name])
+		objs["lbCircuit"].show_all()
+		time.sleep(2)
+	# Code for deleting all elements of listbox
+	for circ_id in idb["circ_ids"]:
+		row_name = "rowCirc" + str(circ_id)
+		objs["lbCircuit"].remove(objs[row_name])
+		del(objs[row_name])
+		del(objs["expCirc" + str(circ_id)])
+		del(objs["lblCirc" + str(circ_id)])

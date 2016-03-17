@@ -95,11 +95,11 @@ def add_row(listbox, left, right):
 	objs[listbox].add(row)
 
 # Code to add single object row
-def add_srow(listbox, obj):
-	row = Gtk.ListBoxRow()
-	row.add(obj)
+def add_srow(name, listbox, obj):
+	objs[name] = Gtk.ListBoxRow()
+	objs[name].add(obj)
 
-	objs[listbox].add(row)
+	objs[listbox].add(objs[name])
 
 # Code to turn listbox definition list into GTK ListBox rows
 def listbox_addrow(listbox, row_list):

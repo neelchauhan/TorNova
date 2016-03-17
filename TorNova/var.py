@@ -29,6 +29,10 @@ else:
 objs = { }
 objs["menuMain"] = Gtk.Menu()
 
+idb = {
+	"circ_ids": [],
+}
+
 # Define error message types
 InfoBox = Gtk.MessageType.INFO
 ErrorBox = Gtk.MessageType.ERROR
