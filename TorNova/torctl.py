@@ -36,7 +36,8 @@ def startTor():
 		tor_proc = stem.process.launch_tor_with_config(config)
 		log_thread = threading.Thread(target=update_log_interval)
 		log_thread.start()
-		set_circuits()
+		circ_thread = threading.Thread(target=set_circuits)
+		circ_thread.start()
 	# Return error message
 	except OSError as err_m:
 		message_box(ErrorBox, "ERROR", str(err_m))
