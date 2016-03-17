@@ -14,12 +14,17 @@ def show_log_win(*args):
 	objs["logWindow"].set_title("TorNova Log")
 	objs["logWindow"].connect("delete-event", lambda w, e: w.hide() or True)
 
+def show_circuit_win(*args):
+	objs["swSettings"].set_vexpand(True)
+	objs["winCircuit"].show_all()
+	objs["winCircuit"].set_title("Tor Circuits")
+	objs["winCircuit"].connect("delete-event", lambda w, e: w.hide() or True)
+
 def show_settings_win(*args):
 	objs["swSettings"].set_vexpand(True)
 	objs["winSettings"].show_all()
 	objs["winSettings"].set_title("TorNova Settings")
 	objs["winSettings"].connect("delete-event", lambda w, e: w.hide() or True)
-
 
 def refresh_log(gparam):
 	text_buf = objs["tvLog"].get_buffer()
@@ -72,6 +77,13 @@ def init_textfield(name):
 	objs[name] = Gtk.Entry()
 	return objs[name]
 
+def init_expander(name, label_text):
+	objs[name] = Gtk.Expander(label=label_text)
+	return objs[name]
+
+def add_to_expander(name, obj_name):
+	objs[name].add(objs[obj_name])
+
 # Code to add row
 def add_row(listbox, left, right):
 	row = Gtk.ListBoxRow()
@@ -81,6 +93,13 @@ def add_row(listbox, left, right):
 	hbox.pack_start(right, False, True, 0)
 
 	objs[listbox].add(row)
+
+# Code to add single object row
+def add_srow(name, listbox, obj):
+	objs[name] = Gtk.ListBoxRow()
+	objs[name].add(obj)
+
+	objs[listbox].add(objs[name])
 
 # Code to turn listbox definition list into GTK ListBox rows
 def listbox_addrow(listbox, row_list):
