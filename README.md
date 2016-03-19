@@ -15,6 +15,7 @@ TorNova is a frontend for Tor written in Python and GTK 3.
  * Log file viewing
  * Automatic log file refreshing
  * Specific entry and exit countries
+ * Circuit viewing
 
 ## What needs to be done
  * Advanced Tor settings
