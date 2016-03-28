@@ -1,7 +1,7 @@
 **Notice**: I am not planning to do any more work on TorNova. I am not giving
 up the idea of a front end to Tor, but am shifting resources to a new project:
-[vtarm](https://github.com/neelchauhan/vtarm) which will still be written in
-Python, but probably will use Qt and will allow connecting to Tor processes
+[vtormon](https://github.com/neelchauhan/vtotmon) which will still be written
+in Python, but probably will use Qt and will allow connecting to Tor processes
 rather than requiring that the Tor process is managed by the program itself
 (which TorNova does now)
 
