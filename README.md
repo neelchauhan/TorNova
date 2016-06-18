@@ -1,9 +1,8 @@
-**Notice**: I am not planning to do any more work on TorNova. I am not giving
-up the idea of a front end to Tor, but am shifting resources to a new project:
-[vtormon](https://github.com/neelchauhan/vtormon) which will still be written
-in Python, but probably will use Qt and will allow connecting to Tor processes
-rather than requiring that the Tor process is managed by the program itself
-(which TorNova does now)
+**Update 2**: I am shifting resources to a new project called
+[OnionLauncher](https://github.com/neelchauhan/OnionLauncher). vtormon got
+cancelled. OnionLauncher is not based on TorNova, but is very similar.
+Differences between TorNova and OnionLauncher are on the **OnionLauncher vs.
+TorNova** section of the OnionLauncher GitHub page.
 
 ![TorNova Logo](artwork/logo.png)
 # TorNova
